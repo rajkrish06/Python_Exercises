@@ -1,0 +1,3 @@
+#Reverse a string --> https://github.com/karan/Projects#text
+st = input('Enter string to reverse:')
+print('{} reversed: {}'.format(st[::-1]))
