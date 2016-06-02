@@ -1,3 +1,5 @@
+#Code to test the palindrome --> problem ref: https://github.com/karan/Projects#text
+
 string = input('Enter string to check palindrome:')
 if string == string[::-1]:
     print('{} is palindrome'.format(string)
