@@ -1,0 +1,11 @@
+#FizzBuzz https://github.com/karan/Projects#Text
+start, End = map(int, (input('Enter Start and End numbers with space to check for divisible by 3, 5 and both')).split())
+for i in range(start, End+1):
+    if (i % 3) == (i % 5) == 0:
+        print('FizzBuzz')
+    elif (i % 3) == 0:
+        print('Fizz')
+    elif (i % 5) == 0:
+        print('Buzz')
+    else:
+        print(i)
