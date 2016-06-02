@@ -1,0 +1,11 @@
+#Count words in a string
+#https://github.com/karan/Projects#Text
+tf_path = input('Enter the path of Text file')  #'C:\\Users\\rajesha.krishnappa\\AppData\\Local\\Programs\\Python\\Python35-32\\Exercies_Sols\\Text.txt'
+ft = open(tf_path, 'r')
+text = ft.read().split()
+wc = {}
+for w in text:
+    wc[w] = wc.get(w, 0) + 1
+
+for k, v in wc.items():
+    print("'{}' word presents :'{}' times".format(k, v))
