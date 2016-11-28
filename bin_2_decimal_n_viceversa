@@ -1,0 +1,21 @@
+#Binary to Decimal and back converter
+
+conv_type = input('Enter conversion from: \n \tBinary to Decimal(1),\
+ \n \tDecimal to Binary(2) \n>>>')
+num = input('Enter value which needs to be converted: ')
+if conv_type == '2':
+    number = int(num)
+    li = ''
+    while number > 0:
+        li += str(number % 2)
+        number = number // 2
+    li = li[::-1]
+    print("Decimal number {} in binary {}".format(num, ''.join(li)))
+elif conv_type == '1':
+    slist = list(num)
+    number = 0
+    for i, n in enumerate(slist[::-1]):
+        number += int(n)*2**i
+    print("Binary number {} in decimal {}".format(num, number))
+else:
+    print("Wrong input, please enter 1 or 2")
