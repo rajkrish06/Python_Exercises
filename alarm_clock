@@ -1,0 +1,36 @@
+#Simple Alarm clock
+
+import time, winsound
+
+def alarm():
+    for i in range(5):
+        for j in range(9):
+            winsound.MessageBeep(-1)
+        time.sleep(2)
+        
+cur_time = time.localtime()
+alarm_year = input("Enter the year of alarm (No need to enter if \
+its current year):")
+alarm_month = input("Enter the month of alarm (No need to enter if \
+its current month):")
+alarm_day = int(input("Enter the date of alarm (1 to 31): "))
+if alarm_year == "":
+    alarm_year = cur_time.tm_year
+else:
+    alarm_year = int(alarm_year) 
+if alarm_month == "":
+    alarm_month = cur_time.tm_mon
+else:
+    alarm_month = int(alarm_month)
+
+alarm_time = list(map(int, input("Enter the time to set for alarm in 24 Hr\
+ format with HH:MM : ").split(':')))
+
+alarm_time_in_seconds = time.mktime((alarm_year, alarm_month, alarm_day, alarm_time[0],
+                          alarm_time[1], 0, 0, 0, 0))
+time_diff = int(alarm_time_in_seconds - time.time())
+if time_diff > 0:
+    time.sleep(time_diff) 
+    alarm()
+else:
+    print('Alarm cant be set for past time')
